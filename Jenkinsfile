@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "CI" 
+        label "INFRA" 
     }
 
     environment {
