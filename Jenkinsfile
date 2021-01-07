@@ -33,11 +33,6 @@ parameters {
                 sh 'env'
 	    	}
 	}
-		stage('stage-II-mvn version'){
-			steps{
-				sh 'mvn --version'
-   				     }
- 				   }
 	    stage('InputStage') {
             input {
                 message "Should we continue?"
@@ -49,8 +44,17 @@ parameters {
             }
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
-            }
-        }
-	}
+                  }
+               }
+	stage('skip mvn version'){	
+		when {
+                environment name: 'CHOICE', value: 'One'
+           				 }	
+				steps{
+				sh 'mvn --version'
+   				     }
+ 				   }
+    
+    }
     }
 
