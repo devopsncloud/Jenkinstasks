@@ -19,6 +19,9 @@ parameters {
         APP_VERSION = '1.0'
 	    SSH = credentials('ci-agent	')
     }
+	 tools { 
+		maven 'MVN'
+		}
 
     stages{
         stage("stage-1"){
