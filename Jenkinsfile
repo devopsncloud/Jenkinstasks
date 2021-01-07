@@ -28,7 +28,7 @@ parameters {
             steps{
                 sh 'env'
 	    	}
-		stage(stage-II-mvn version){
+		stage('stage-II-mvn version'){
 			steps{
 				sh 'mvn --version'
    				     }
