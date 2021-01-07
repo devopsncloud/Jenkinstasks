@@ -21,18 +21,17 @@ parameters {
     }
 
     stages{
-        stage("Test"){
+        stage("stage-1"){
 	environment{
 		APP_VERSION = '2.0'
 			}
             steps{
                 sh 'env'
 	    	}
-
-
-        }
-    
+		stage(stage-II-mvn version){
+			steps{
+				sh 'mvn --version'
+   				     }
+ 				   }
+	}
     }
-
-
-}
